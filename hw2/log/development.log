@@ -7060,3 +7060,349 @@ Processing by CoursesController#index as HTML
 Completed 200 OK in 183ms (Views: 153.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-10-06 14:34:51 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 520ms (Views: 473.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2018-10-06 14:34:55 -0600
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 205ms (Views: 162.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/courses/3" for 127.0.0.1 at 2018-10-06 14:35:00 -0600
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mSection Load (1.0ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."course_id" = ?[0m  [["course_id", 3]]
+  Rendered courses/show.html.erb within layouts/application (54.7ms)
+Completed 200 OK in 235ms (Views: 199.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2018-10-06 14:35:02 -0600
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 209ms (Views: 180.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-09 10:06:44 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 1252ms (Views: 1129.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sections" for 127.0.0.1 at 2018-10-09 10:07:19 -0600
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  [1m[36mSection Load (0.0ms)[0m  [1m[34mSELECT "sections".* FROM "sections"[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered sections/index.html.erb within layouts/application (127.9ms)
+Completed 200 OK in 684ms (Views: 490.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sections/new" for 127.0.0.1 at 2018-10-09 10:07:23 -0600
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[36mStudent Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered sections/_form.html.erb (231.0ms)
+  Rendered sections/new.html.erb within layouts/application (246.6ms)
+Completed 200 OK in 593ms (Views: 551.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sections" for 127.0.0.1 at 2018-10-09 10:10:41 -0600
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  [1m[36mSection Load (0.0ms)[0m  [1m[34mSELECT "sections".* FROM "sections"[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered sections/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 209ms (Views: 178.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sections/5" for 127.0.0.1 at 2018-10-09 10:10:48 -0600
+Processing by SectionsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mSection Load (0.0ms)[0m  [1m[34mSELECT  "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering sections/show.html.erb within layouts/application
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN "sections_students" ON "students"."id" = "sections_students"."student_id" WHERE "sections_students"."section_id" = ?[0m  [["section_id", 5]]
+  Rendered sections/show.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 456ms (Views: 332.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sections" for 127.0.0.1 at 2018-10-09 10:11:58 -0600
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  [1m[36mSection Load (0.0ms)[0m  [1m[34mSELECT "sections".* FROM "sections"[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered sections/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 280ms (Views: 205.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2018-10-09 11:10:52 -0600
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (4.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 312ms (Views: 221.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/courses/new" for 127.0.0.1 at 2018-10-09 11:10:55 -0600
+Processing by CoursesController#new as HTML
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/_form.html.erb (12.0ms)
+  Rendered courses/new.html.erb within layouts/application (53.7ms)
+Completed 200 OK in 277ms (Views: 237.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2018-10-09 11:18:58 -0600
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 335ms (Views: 263.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses/3" for 127.0.0.1 at 2018-10-09 11:19:00 -0600
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mSection Load (0.0ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."course_id" = ?[0m  [["course_id", 3]]
+  Rendered courses/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 224ms (Views: 178.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2018-10-09 11:24:57 -0600
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 408ms (Views: 278.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-10-11 18:16:04 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 1078ms (Views: 1020.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2018-10-11 18:16:11 -0600
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 383ms (Views: 272.5ms | ActiveRecord: 15.6ms)
+
+
+Started DELETE "/students/12" for 127.0.0.1 at 2018-10-11 18:16:43 -0600
+Processing by StudentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/ljRwfPLzXGH7o/X9EgFfvsiwXPCK6kqmV0CzzR3/TLYiI8ftWg0dQUFrJ0l9Fr6J/ZZTZdG0ExrMIVxA+huog==", "id"=>"12"}
+  [1m[36mStudent Load (4.0ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[31mDELETE FROM "sections_students" WHERE "sections_students"."student_id" = ?[0m  [["student_id", 12]]
+  [1m[35mSQL (0.0ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = ?[0m  [["id", 12]]
+  [1m[35m (16.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/students
+Completed 302 Found in 156ms (ActiveRecord: 24.1ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2018-10-11 18:16:43 -0600
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 236ms (Views: 192.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/search?utf8=%E2%9C%93&q=kevin&commit=Search" for 127.0.0.1 at 2018-10-11 18:17:18 -0600
+Processing by StudentsController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"kevin", "commit"=>"Search"}
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE (name like '%kevin%')[0m
+  Rendered students/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 244ms (Views: 245.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/search?utf8=%E2%9C%93&q=&commit=Search" for 127.0.0.1 at 2018-10-11 18:18:07 -0600
+Processing by StudentsController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"", "commit"=>"Search"}
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE (name like '%%')[0m
+  Rendered students/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 321ms (Views: 318.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/search?utf8=%E2%9C%93&q=ham&commit=Search" for 127.0.0.1 at 2018-10-11 18:18:11 -0600
+Processing by StudentsController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"ham", "commit"=>"Search"}
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE (name like '%ham%')[0m
+  Rendered students/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 172ms (Views: 169.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/search?utf8=%E2%9C%93&q=&commit=Search" for 127.0.0.1 at 2018-10-11 18:19:47 -0600
+Processing by StudentsController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"", "commit"=>"Search"}
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE (name like '%%')[0m
+  Rendered students/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 272ms (Views: 272.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2018-10-11 18:19:49 -0600
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 198ms (Views: 150.6ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/courses/new" for 127.0.0.1 at 2018-10-11 18:19:54 -0600
+Processing by CoursesController#new as HTML
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/_form.html.erb (31.2ms)
+  Rendered courses/new.html.erb within layouts/application (62.5ms)
+Completed 200 OK in 276ms (Views: 237.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/courses" for 127.0.0.1 at 2018-10-11 18:19:57 -0600
+Processing by CoursesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wmrgvhRgtS3v5UG3C3tEQXZ8RwkiXLoWSitTus0SukCh5C/vxrN/9h8YQCYn00smS4ZfKizjJ9A1mTFTYFh2uQ==", "course"=>{"name"=>"test", "department"=>"", "number"=>"", "credits"=>""}, "commit"=>"Create Course"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/_form.html.erb (4.0ms)
+  Rendered courses/new.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 252ms (Views: 239.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2018-10-11 18:20:03 -0600
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 190ms (Views: 156.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sections" for 127.0.0.1 at 2018-10-11 18:20:05 -0600
+Processing by SectionsController#index as HTML
+  Rendering sections/index.html.erb within layouts/application
+  [1m[36mSection Load (0.0ms)[0m  [1m[34mSELECT "sections".* FROM "sections"[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCourse Load (4.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered sections/index.html.erb within layouts/application (72.0ms)
+Completed 200 OK in 468ms (Views: 371.9ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/sections/new" for 127.0.0.1 at 2018-10-11 18:20:08 -0600
+Processing by SectionsController#new as HTML
+  Rendering sections/new.html.erb within layouts/application
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[36mStudent Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered sections/_form.html.erb (198.4ms)
+  Rendered sections/new.html.erb within layouts/application (229.6ms)
+Completed 200 OK in 426ms (Views: 395.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sections" for 127.0.0.1 at 2018-10-11 18:20:12 -0600
+Processing by SectionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qy8mWskusqd2n3TRAy7kqqUDSu2McKkqYZiqTvU1jXsUv6kI27EWP/Yg7jvRsZ4SJxqMywcOuusITMHxgvtmzw==", "section"=>{"semester"=>"a", "number"=>"", "course_id"=>"3", "student_ids"=>[""], "room"=>""}, "commit"=>"Create Section"}
+  [1m[36mStudent Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSection Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "sections" WHERE "sections"."number" = ? LIMIT ?[0m  [["number", ""], ["LIMIT", 1]]
+  [1m[35m (4.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering sections/new.html.erb within layouts/application
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered sections/_form.html.erb (48.0ms)
+  Rendered sections/new.html.erb within layouts/application (80.0ms)
+Completed 500 Internal Server Error in 220ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    28: 
+    29:   <div class="field">
+    30:     <%= f.label :student_id %><br>
+    31:     <%= f.collection_check_boxes(:student_ids, @students, :id, :name) %>
+    32:   </div>
+    33: 
+    34:   <div class="field">
+  
+app/views/sections/_form.html.erb:31:in `block in _app_views_sections__form_html_erb__35190256_87076880'
+app/views/sections/_form.html.erb:1:in `_app_views_sections__form_html_erb__35190256_87076880'
+app/views/sections/new.html.erb:3:in `_app_views_sections_new_html_erb__143189505_95776740'
+app/controllers/sections_controller.rb:36:in `block (2 levels) in create'
+app/controllers/sections_controller.rb:31:in `create'
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.0ms)
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1916.1ms)
+Started POST "/sections" for 127.0.0.1 at 2018-10-11 18:20:28 -0600
+Processing by SectionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e8I3TSb3MscShmFDBbzjdcnbW4ghJa64MCUkW04wCVRdEmmTYFTLw5BtQgnUALzxFQ/DtnRI197CSKPlea+axA==", "section"=>{"semester"=>"a", "number"=>"", "course_id"=>"3", "student_ids"=>[""], "room"=>""}, "commit"=>"Create Section"}
+  [1m[36mStudent Load (0.0ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE 1=0[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSection Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "sections" WHERE "sections"."number" = ? LIMIT ?[0m  [["number", ""], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering sections/new.html.erb within layouts/application
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered sections/_form.html.erb (40.0ms)
+  Rendered sections/new.html.erb within layouts/application (72.0ms)
+Completed 500 Internal Server Error in 192ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    28: 
+    29:   <div class="field">
+    30:     <%= f.label :student_id %><br>
+    31:     <%= f.collection_check_boxes(:student_ids, @students, :id, :name) %>
+    32:   </div>
+    33: 
+    34:   <div class="field">
+  
+app/views/sections/_form.html.erb:31:in `block in _app_views_sections__form_html_erb__35190256_107836900'
+app/views/sections/_form.html.erb:1:in `_app_views_sections__form_html_erb__35190256_107836900'
+app/views/sections/new.html.erb:3:in `_app_views_sections_new_html_erb__143189505_107801040'
+app/controllers/sections_controller.rb:36:in `block (2 levels) in create'
+app/controllers/sections_controller.rb:31:in `create'
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.0ms)
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/actionpack-5.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1888.2ms)
