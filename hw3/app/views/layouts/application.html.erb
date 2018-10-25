@@ -8,7 +8,28 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <div class="bootstrap-iso">
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
+      <ul class="nav navbar-nav">
+      <li><%= link_to "CS390P", root_path %></li>
+      <li><%= link_to "Courses", courses_path %></li>
+      <li><%= link_to "Sections", sections_path %></li>
+      <li><%= link_to 'Students', students_path %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to 'Log in', user_session_path %></li>
+        <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
   <body>
     <%= yield %>
   </body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
 </html>

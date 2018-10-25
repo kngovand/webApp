@@ -6,7 +6,7 @@
   <%= label_tag(:q, "Search for semester:") %>
   <%= text_field_tag(:q) %>
   <%= submit_tag("Search") %>
-<% end %> <br>
+<% end %> <br><br>
 
 <table>
   <thead>
@@ -35,9 +35,3 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Section', new_section_path %>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<%= link_to 'Courses', "http://localhost:3000/courses" %>
-<%= link_to 'Students', "http://localhost:3000/students" %><br>
