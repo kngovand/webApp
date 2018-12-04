@@ -1,4 +1,91 @@
 <h1>Welcome!</h1>
 <br>
-Please use the navigation bar to get started.
+<b>Please use the navigation bar to get started or click on the buttons to see the SPA in action.</b>
+<br><br>
+<i>This web application program was written in Ruby on Rails 5.1 in Dr. Beaty's CS390P Web Architecture class. The idea was to<br>
+create a fully functional website similarly to a Banner application with the Rails MVC. This application contains many features:</i>
+<ul>
+    <li>Courses, Sections, and Students 
+    <li>A working navigation bar with Bootstrap gems
+    <li>Log on gem using Devise
+    <li>Authentication and verification
+    <li>Search function for each page
+    <li>A single page application using JQuery
+</ul>
+<hr>
+<br><br>
+
+<html>
+<head>
+<title>A very simple SPA in Vue and Axios</title>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="Itemlist">
+    <button v-on:click="courses_selected=true, sections_selected=false, students_selected=false">Courses</button>
+    <button v-on:click="sections_selected=true, students_selected=false, courses_selected=false">Sections</button>
+    <button v-on:click="students_selected=true, sections_selected=false, courses_selected=false">Students</button>
+    <ul>
+
+    <span v-if="sections_selected">
+        <div v-for="section in sections">
+            <li>{{section.semester}}, Section {{section.number}}</li>
+                <div v-for="course in courses">
+                    <span v-if="section.course_id === course.id">
+                        Class: {{course.name}}
+                    </span>
+                </div>
+        </div>
+    </span>
+
+    <span v-else-if="courses_selected">
+        <div v-for="course in courses">
+            <li>{{course.name}}, {{course.department}}, #{{course.number}}, {{course.credits}} credits</li>
+            <div v-for="section in sections">
+                <span v-if="section.course_id === course.id">
+                    {{section.semester}}, Section {{section.number}}
+                </span>
+            </div>
+        </div>
+    </span>
+
+    <span v-else-if="students_selected">
+        <div v-for="student in students">
+            <li>{{student.name}}</li>
+                <div v-for="section in sections">
+                        Section {{section.number}}
+                </div>
+        </div>
+    </span>
+    </ul>
+</div>
+
+<script type="text/javascript">
+var ItemsVue = new Vue({
+    el: '#Itemlist',
+    data: { courses: [],
+        students_selected: false,
+        sections_selected: false,
+        courses_selected: false,
+        sections: [],
+        students: []
+     },
+    mounted: function() {
+        axios.get('http://localhost:3000/sections.json')
+            .then(response => { this.sections = response.data })
+            .catch(error => { console.log(error); });
+        axios.get('http://localhost:3000/courses.json')
+            .then(response => { this.courses = response.data })
+            .catch(error => { console.log(error); });
+        axios.get('http://localhost:3000/students.json')
+            .then(response => { this.students = response.data })
+            .catch(error => { console.log(error); });
+    }
+});
+</script>
+
+</body>
+</html>
 
